@@ -16,5 +16,4 @@ export class HeaderComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
-
 }
