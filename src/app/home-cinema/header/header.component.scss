@@ -1,0 +1,119 @@
+// .sidenav-container {
+//   height: 100%;
+// }
+
+// .sidenav {
+//   width: 200px;
+// }
+
+// .sidenav .mat-toolbar {
+//   background: inherit;
+// }
+
+// .mat-toolbar.mat-primary {
+//   position: sticky;
+//   top: 0;
+//   z-index: 1;
+// }
+header{
+  background: rgba(0, 0, 0, .85);
+  width: 100%;
+  position: fixed;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .65);
+}
+.mynav {
+  background: rgba(0, 0, 0, .85);
+  width: 100%;
+  position: fixed;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .65);
+
+  .nav-logo {
+    margin-left: 30px;
+  }
+
+  .mynav-icon {
+    outline: none;
+    color: rgb(34, 202, 237);
+
+    .mynav-menu-icon {
+      font-size: 35px;
+      height: 35px;
+      width: 35px;
+      line-height: 35px;
+    }
+  }
+
+  .mynav-item {
+    justify-content: center;
+
+    .mynav-menu-item {
+      border: none;
+      margin-left: 30px;
+
+      &:hover a {
+        color: rgb(34, 202, 237);
+        transition: .5s all;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .login a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  mat-toolbar {
+    border-radius: 0px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-expand-custom {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .navbar-expand-custom .navbar-nav {
+    flex-direction: row;
+  }
+
+  .navbar-expand-custom .navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+
+  .navbar-expand-custom .navbar-collapse {
+    display: flex !important;
+  }
+
+  .navbar-expand-custom .navbar-toggler {
+    display: none;
+  }
+
+  .mynav {
+    .mynav-item {
+      .mynav-menu-item {
+        border: solid 1px rgb(34, 202, 237);
+      }
+    }
+  }
+}
