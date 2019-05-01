@@ -13,14 +13,23 @@ import { DemoMaterialModule } from '../share-module/material-test/material-test.
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
-
+import { OwlModule } from 'ngx-owl-carousel';
 @NgModule({
-  declarations: [HomeCinemaComponent, ShowtimeComponent, TheaterComponent, NewsComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, ],
+  declarations: [HomeCinemaComponent, ShowtimeComponent, TheaterComponent, NewsComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent,],
   imports: [
-    CommonModule,HomeCinemaRoutingModule,DemoMaterialModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule
+    CommonModule,
+    HomeCinemaRoutingModule,
+    DemoMaterialModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    OwlModule
   ],
-  exports:[
-    HomeCinemaComponent,NewsComponent
+  exports: [
+    HomeCinemaComponent, NewsComponent
   ]
 })
 export class HomeCinemaModule { }

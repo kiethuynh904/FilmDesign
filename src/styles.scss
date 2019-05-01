@@ -9,3 +9,27 @@ body {
     box-sizing: border-box;
     font-size: 18px;
 }
+//OWL CAROUSEL   
+
+ 
+
+ 
+
+.owl-carousel .prev-slide {
+  // background: url(./assets/images/nav-icon.png) no-repeat scroll 0 0;
+  left: -33px;
+}
+ 
+.owl-carousel .next-slide {
+  // background: url(./assets/images/nav-icon.png) no-repeat scroll -24px 0px;
+  right: -33px;
+}
+ 
+// .owl-carousel .prev-slide:hover {
+//   background-position: 0px -53px;
+// }
+ 
+// .owl-carousel .next-slide:hover {
+//   background-position: -24px -53px;
+// }
+//OWL CAROUSEL  
