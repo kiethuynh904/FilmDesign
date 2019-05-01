@@ -14,8 +14,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 import { OwlModule } from 'ngx-owl-carousel';
+import { CarouselFilmComponent } from './home-page/carousel-film/carousel-film.component';
 @NgModule({
-  declarations: [HomeCinemaComponent, ShowtimeComponent, TheaterComponent, NewsComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent,],
+  declarations: [HomeCinemaComponent, ShowtimeComponent, TheaterComponent, NewsComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, CarouselFilmComponent,],
   imports: [
     CommonModule,
     HomeCinemaRoutingModule,
@@ -29,7 +30,7 @@ import { OwlModule } from 'ngx-owl-carousel';
     OwlModule
   ],
   exports: [
-    HomeCinemaComponent, NewsComponent
+    HomeCinemaComponent, NewsComponent,
   ]
 })
 export class HomeCinemaModule { }
