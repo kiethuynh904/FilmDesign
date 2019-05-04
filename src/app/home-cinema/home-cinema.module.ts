@@ -15,8 +15,10 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 
 import { OwlModule } from 'ngx-owl-carousel';
 import { CarouselFilmComponent } from './home-page/carousel-film/carousel-film.component';
+import { ListFilmComponent } from './home-page/list-film/list-film.component';
+import { FilmComponent } from './home-page/list-film/film/film.component';
 @NgModule({
-  declarations: [HomeCinemaComponent, ShowtimeComponent, TheaterComponent, NewsComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, CarouselFilmComponent,],
+  declarations: [HomeCinemaComponent, ShowtimeComponent, TheaterComponent, NewsComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, CarouselFilmComponent, ListFilmComponent, FilmComponent,],
   imports: [
     CommonModule,
     HomeCinemaRoutingModule,

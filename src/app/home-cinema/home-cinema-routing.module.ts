@@ -5,21 +5,22 @@ import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
-    {
-      path:'',component:HomeCinemaComponent,children : [
-          {
-              path:'news',component:NewsComponent
-          },
-          {
-              path:'home-page',component:HomePageComponent
-          }
-      ]
-    },
-    
-  ];
-  
-  @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
-  })
-  export class HomeCinemaRoutingModule { }
+  {
+    path: '', component: HomeCinemaComponent, children: [
+      {
+        path: '', component: HomePageComponent
+      },
+      {
+        path: 'news', component: NewsComponent
+      },
+
+    ]
+  },
+
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class HomeCinemaRoutingModule { }

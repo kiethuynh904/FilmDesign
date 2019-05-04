@@ -11,68 +11,49 @@ export class CarouselFilmComponent implements OnInit {
   carouselOptions = {
     margin:25,
     loop:true,
-    nav: true,
-    navText: ["<div class='nav-btn prev-slide'><i class='fa fa-angle-double-left'></i></div>", "<div class='nav-btn next-slide'><i class='fa fa-angle-double-right'></i></div>"],
+    dots:false,
+    nav: false,
+    navText: ["<div class='prev-click'><i class='fa fa-angle-left'></i></div>", "<div class='next-click'><i class='fa fa-angle-right'></i></div>"],
+    animateOut: 'fadeOut',
+    autoplay:true,
+    autoplaySpeed:5000,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
     responsiveClass: true,
     responsive: {
       0: {
         items: 1,
-        nav: false
+        nav: false,
+        loop:true,
       },
       600: {
         items: 1,
-        nav: false
+        nav: false,
+        loop:true
       },
       1000: {
         items: 1,
         nav: true,
-        loop: false
+        loop: true
       },
       1500: {
         items: 1,
         nav: true,
-        loop: false
+        loop: true
       }
     }
   }
  
   images = [
     {
-      text: "Everfresh Flowers",
       image: "/assets/images/slider/slide1.jpg"
     },
     {
-      text: "Festive Deer",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/2.jpg"
+      image: "/assets/images/slider/slide2.jpg"
     },
     {
-      text: "Morning Greens",
       image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/3.jpg"
     },
-    {
-      text: "Bunch of Love",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/4.jpg"
-    },
-    {
-      text: "Blue Clear",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg"
-    },
-    {
-      text: "Evening Clouds",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/7.jpg"
-    },
-    {
-      text: "Fontains in Shadows",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/8.jpg"
-    },
-    {
-      text: "Kites in the Sky",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/9.jpg"
-    },
-    {
-      text: "Sun Streak",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/10.jpg"
-    }
   ]
   constructor() { }
 

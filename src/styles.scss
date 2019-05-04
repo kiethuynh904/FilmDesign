@@ -8,30 +8,39 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     box-sizing: border-box;
     font-size: 18px;
+    color: #FAF0E6;
+    
 }
-.owl-carousel .prev-slide {
-  position: absolute;
-  // background: url(./assets/images/nav-icon.png) no-repeat scroll 0 0;
-  left: 5%;
-  bottom: 50%;
-  color: #000;
-  font-size: 60px;
+.owl-carousel{
+  .prev-click {
+    position: absolute;
+    left: 5%;
+    bottom: 50%;
+    color: #A9A9A9;
+    font-size: 60px;
+    z-index: 100;
+    &:hover{  
+        color: rgb(34, 202, 237);
+        transition: .5s all
+    }
+  }
+   
+   .next-click {
+    position: absolute;
+    right: 5%;
+    bottom: 50%;
+    color: #778899    ;
+    font-size: 60px;
+    z-index: 100;
+    &:hover{
+      color: rgb(34, 202, 237);
+      transition: .5s all
+    }
+  }
 }
  
-.owl-carousel .next-slide {
-  // background: url(./assets/images/nav-icon.png) no-repeat scroll -24px 0px;
-  position: absolute;
-  right: 0;
-  bottom: 50%;
-  color: #000;
-  font-size: 60px;
-}
  
-.owl-carousel .prev-slide:hover {
-  color: rgb(34, 202, 237);
-}
+
  
-.owl-carousel .next-slide:hover {
-  color: rgb(34, 202, 237);
-}
+
 //OWL CAROUSEL  
