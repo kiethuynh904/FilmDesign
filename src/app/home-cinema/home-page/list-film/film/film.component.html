@@ -1,3 +1,24 @@
-<p>
-  film works!
-</p>
+<section class="myfilm">
+  <div class="film-img">
+    <img [src]="movie.HinhAnh">
+    <span class="rate">{{movie.DanhGia}}
+      <ng-container *ngIf="movie.DanhGia != 10">.0</ng-container>
+    </span>
+
+    <a class="icon-play" [href]="movie.Trailer" target="_blank">
+      <div>
+        <i class="fa fa-play"></i>
+        <p style="margin:0">Watch Trailer</p>
+      </div>
+    </a>
+  </div>
+  <div class="film-info">
+    <p>100 minute</p>
+  </div>
+  <div class="film-name">
+    <p> {{movie.TenPhim}}</p>
+  </div>
+  
+    <a [routerLink]="['/home/detail/',movie.MaPhim]" [queryParams]="{tenPhim: movie.TenPhim,trailer:movie.Trailer}" class="buy-ticket">Buy Ticket</a>
+  
+</section>

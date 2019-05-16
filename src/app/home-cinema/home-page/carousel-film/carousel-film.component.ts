@@ -52,7 +52,10 @@ export class CarouselFilmComponent implements OnInit {
       image: "/assets/images/slider/slide2.jpg"
     },
     {
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/3.jpg"
+      image: "/assets/images/slider/slide3.jpg"
+    },
+    {
+      image: "/assets/images/slider/slide5.jpg"
     },
   ]
   constructor() { }

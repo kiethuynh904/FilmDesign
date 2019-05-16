@@ -6,6 +6,9 @@ const routes: Routes = [
     path:'home',loadChildren:'./home-cinema/home-cinema.module#HomeCinemaModule'
   },
   {
+    path:'admin',loadChildren:'./admin-cinema/admin-cinema.module#AdminCinemaModule' 
+  },
+  {
     path:'',redirectTo:'home',pathMatch:'full'
   },
 ];

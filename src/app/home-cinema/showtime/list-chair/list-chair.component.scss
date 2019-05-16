@@ -1,0 +1,61 @@
+.myListChair {
+
+  background: linear-gradient(to right, #0E1428, #0B1123, #0A0F20);
+
+  .mylistchair-content {
+    width: 100%;
+
+    .listinfo {
+      height: 100%;
+      padding: 0px 30px;
+      color: #FAF0E6;
+      background: rgba(58, 64, 71, .2);
+
+      .film-name {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 400;
+      }
+
+      
+
+      .film-img {
+        width: 100%;
+        height: 30%;
+      }
+
+      .rate {
+        margin-bottom: 20px;
+
+        i {
+          color: #fdd300;
+        }
+      }
+      .film-info {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        letter-spacing: 1px;
+      }
+
+      .film-content {
+          letter-spacing: 1.5px;
+      }
+    }
+
+    .listChair {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-gap: 0px;
+      grid-auto-rows: minmax(100px, auto);
+
+
+    }
+  }
+
+
+
+
+}

@@ -1,12 +1,78 @@
-.mygroupfilm{
-    position: relative;
-    top: -5px;
-    padding: 5px;
-    .tittleGroup{
+//MIXITUP
+
+//CLOSE MIXITUP
+.mylistfilm {
+  color: #FAF0E6;
+  background: linear-gradient(to right, #0E1428, #0B1123, #0A0F20);
+
+  .listfilm-content {
+    width: 90%;
+    margin: 0 auto;
+
+    .tab-film {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 15px;
+      border-radius: 5px;
+      margin-right: 16px;
+      font-size: 18px;
+
+      .tab-film-1,
+      .tab-film-2 {
+        margin: 0 20px;
+        padding-bottom: 5px;
+        text-align: center;
+        transition: .5s all;
+        position: relative;
+        &:after {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          content: '';
+          width: 0;
+          height: 3px;
+          border-radius: 3px;
+          display: block;
+          background: #e85d6b;
+        }
+        &:hover:after{
+          width: 100%;
+          transition: .4s all;
+        }
+        &:hover {
+          color: #FAF0E6;
+          
+        }
+      }
+
+      //CUSTOM EFFECT MIXITUP
+      .mixitup-control-active {
         color: #FAF0E6;
+        &:after {
+          content: '';
+          width: 100%;
+          margin: 0 auto;
+          display: block;
+          background: #e85d6b;
+        }
+      }
+
+      //END CUSTOM EFFECT MIXITUP
     }
-    
+
+    .list-film {
+
+      .tab-1,
+      .tab-2 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+
+    }
+  }
 }
-.mat-tab-labels{
-        background: #1d1d1d;
-    }

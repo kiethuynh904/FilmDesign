@@ -1,0 +1,44 @@
+<div class="myListChair">
+  <div class="mylistchair-content row">
+    <div class="col-lg-3">
+      <div class="listinfo">
+        <img class="film-img" [src]="hinhAnh" alt="failed">
+        <div class="rate">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half"></i>
+          <span>rank</span>
+        </div>
+        <div class="film-name">
+          <p>{{tenPhim}}</p>
+        </div>
+        <div class="film-info">
+          <div class="film-info-item">
+            <i class="fa fa-clock"></i> <span>121 min</span>
+          </div>
+          <div class="film-info-item">
+            <i class="fa fa-bars"></i> <span>Action/Aventure/Sci-Fi</span>
+          </div>
+          <div class="film-info-item">
+            <i class="fa fa-calendar-check"></i> <span>2018</span>
+          </div>
+        </div>
+        <div class="film-content">
+          <p>
+            {{moTa}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class=" listChair">
+        <ng-container *ngFor="let item of danhSachGhe.DanhSachGhe; let stt = index">
+          <app-chair [chair]="item"></app-chair>
+        </ng-container>
+      </div>
+    </div>
+
+  </div>
+</div>

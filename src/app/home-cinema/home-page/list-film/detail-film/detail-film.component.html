@@ -1,0 +1,42 @@
+<ng-container *ngIf="detailMovie">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <img [src]="detailMovie.HinhAnh" alt="">
+      </div>
+      <div class="col-sm-6">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Tên phim</td>
+              <td>{{detailMovie.TenPhim}}</td>
+            </tr>
+            <tr>
+              <td>Mô tả</td>
+              <td>{{detailMovie.MoTa}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Rạp</td>
+              <td>Ngày</td>
+              <td>Giờ</td>
+            </tr>
+            <tr *ngFor="let item of detailMovie.LichChieu">
+              <td>{{item.Rap.TenRap}}</td>
+              <td>{{item.NgayChieuGioChieu | date: "MM-dd-yyy"}}</td>
+              <td>{{item.NgayChieuGioChieu | date: "hh-mm-ss"}}</td>
+              <td><a class="btn btn-success" [routerLink]="['/home/showtimes/',item.MaLichChieu]" [queryParams] ="{tenPhim:detailMovie.TenPhim,hinhAnh:detailMovie.HinhAnh,moTa:detailMovie.MoTa}" (click)="datVe(item.MaLichChieu)">Đặt vé</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>

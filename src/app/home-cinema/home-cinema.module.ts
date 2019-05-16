@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeCinemaComponent } from './home-cinema.component';
 import { HomeCinemaRoutingModule } from './home-cinema-routing.module';
-import { ShowtimeComponent } from './showtime/showtime.component';
+
 import { TheaterComponent } from './theater/theater.component';
 import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
@@ -17,8 +17,11 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { CarouselFilmComponent } from './home-page/carousel-film/carousel-film.component';
 import { ListFilmComponent } from './home-page/list-film/list-film.component';
 import { FilmComponent } from './home-page/list-film/film/film.component';
+import { DetailFilmComponent } from './home-page/list-film/detail-film/detail-film.component';
+
+
 @NgModule({
-  declarations: [HomeCinemaComponent, ShowtimeComponent, TheaterComponent, NewsComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, CarouselFilmComponent, ListFilmComponent, FilmComponent,],
+  declarations: [HomeCinemaComponent, TheaterComponent, NewsComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, CarouselFilmComponent, ListFilmComponent, FilmComponent, DetailFilmComponent],
   imports: [
     CommonModule,
     HomeCinemaRoutingModule,
@@ -29,10 +32,10 @@ import { FilmComponent } from './home-page/list-film/film/film.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    OwlModule
+    OwlModule,
   ],
   exports: [
-    HomeCinemaComponent, NewsComponent,
+    HomeCinemaComponent, NewsComponent, DetailFilmComponent
   ]
 })
 export class HomeCinemaModule { }

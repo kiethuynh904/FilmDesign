@@ -1,0 +1,5 @@
+<button *ngIf="chair.DaDat;else elseContent" class="chair booked">{{chair.STT}}</button>
+
+<ng-template #elseContent>
+  <button [ngClass]="{'chairBooking':chairBooking}" (click)="clickChoose()" class="chair">{{chair.STT}}</button>
+</ng-template>

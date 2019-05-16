@@ -1,12 +1,18 @@
 <section class="mylistfilm">
-  <div class="container">
-    <mat-tab-group class="mygroupfilm" color ="accent">
-      <mat-tab label="Now Playing">
-        <app-film></app-film>
-      </mat-tab>
-      <mat-tab label="Comming Soon">
-        <app-film></app-film>
-      </mat-tab>
-    </mat-tab-group>
+  <div class="listfilm-content">
+    <div class="tab-film">
+      <p class="tab-film-1" data-filter=".tab-1">Now Playing</p>
+      <p class="tab-film-2" data-filter=".tab-2">
+        Comming Soon
+      </p>
+    </div>
+    <div class="list-film">
+      <div class="mix tab-1">   
+          <app-film [movie]="item"  *ngFor="let item of listFilmNow" ></app-film>
+      </div>
+      <div class="mix tab-2">
+        <app-film [movie] = "item" *ngFor = "let item of ListFilmCommingSoon"></app-film>
+      </div>
+    </div>
   </div>
 </section>

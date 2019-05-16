@@ -1,5 +1,14 @@
 .mycarousel {
-    padding-top:55px;
+  .carousel-title{
+    color: #FAF0E6;
+    p{
+      font-size: 26px;
+      font-weight: 300;
+      padding: 20px 0;
+    }
+  }
+    // padding-top:55px;
+    background: linear-gradient(to right,#0D1327,#101830,#0C1226);
   .slide-image {
     background-size: cover;
     background-position: center center;
@@ -9,7 +18,7 @@
 }
 @media screen and (max-width:1600px){
   .mycarousel {
-    padding-top:55px;
+    // padding-top:55px;
     
   .slide-image {
     width: 103%;

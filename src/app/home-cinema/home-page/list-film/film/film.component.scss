@@ -1,0 +1,92 @@
+.myfilm {
+  
+  height: 500px;
+  padding: 0 30px;
+  position: relative;
+  &:hover .film-img .icon-play {
+    opacity: 1;
+    transition: .5s all;
+  }
+  .buy-ticket{
+    border-radius: 10px;
+    background: #e85d6b;
+    position: absolute;
+    border: none;
+    width: 80%;
+    height: 55px;
+    line-height: 55px;
+    outline: none;
+    bottom: 20px;
+    left: 50%;
+    color: #FAF0E6;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: .5s all;
+    text-align: center;
+    text-decoration: none;
+  }
+  &:hover .buy-ticket{
+    opacity: 1;
+  }
+  &:hover .film-name{
+    transition: .3s all;
+    display: none;
+  }
+  .film-img {
+    position: relative;
+    height: 80%;
+    .rate {
+      color: #000;
+      width: 40px;
+      text-align: center;
+      border-radius: 20px;
+      background: #fdc82c;
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+    }
+    .icon-play {
+      text-decoration: none;
+      width: 85px;
+      height: 85px;
+      padding: 10px;
+      background: #e85d6b;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #FAF0E6;
+      box-shadow: -5px 10px 60px 2px #000;
+      .div{
+        line-height: 90px;
+      }
+      i{
+        font-size: 18px;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .film-info {
+    height: 10%;
+    color: #2E8B57;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .film-name {
+    height: 10%;
+    font-size: 20px;
+    p{
+      margin: 0;
+    }
+  }
+}
