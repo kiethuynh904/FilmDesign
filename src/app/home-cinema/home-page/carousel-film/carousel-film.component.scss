@@ -1,4 +1,5 @@
 .mycarousel {
+  padding-top: 100px;
   .carousel-title{
     color: #FAF0E6;
     p{
@@ -37,7 +38,7 @@
 
 @media screen and (max-width: 992px) {
   .mycarousel {
-    padding-top: 79px;
+    padding-top: 100px;
     .slide-image {
       height: 400px;
     }

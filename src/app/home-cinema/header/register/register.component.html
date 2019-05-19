@@ -1,0 +1,33 @@
+<section class="myregister">
+  <h3 class="text-center">REGISTER</h3>
+  <div class="container">
+    <form #registerUser="ngForm" class="myform" (ngSubmit)="RegisterUser(registerUser.value)">
+      <div class="form-group">
+        <label>Username :</label>
+        <div class="myform-item">
+            <input   type="text" class="myform-item" #username name="Username" ngModel>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label>Password:</label>
+        <div class="myform-item">
+            <input type="text" class="myform-item" #password name="Password" ngModel>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label>Email:</label>
+        <div class="myform-item"><input  type="email" class="myform-item" #email name="Email" ngModel></div>
+      </div>
+    
+      <div class="form-group">
+        <label>Phone :</label>
+        <div class="myform-item">
+            <input  type="text" class="myform-item" #phonenumber name="Phonenumber" ngModel>
+        </div>
+      </div>
+      <button class="btn-register">Sign Up</button>
+    </form>
+  </div>
+</section>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-chair',
@@ -7,8 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChairComponent implements OnInit {
   @Input() chair;
-
-  
+  @Output() EventChooseChair = new EventEmitter();
   public chairBooking: boolean = false;
   constructor() { }
 
@@ -17,5 +16,6 @@ export class ChairComponent implements OnInit {
 
   clickChoose() {
     this.chairBooking = !this.chairBooking;
+    this.EventChooseChair.emit(this.chairBooking)
   }
 }

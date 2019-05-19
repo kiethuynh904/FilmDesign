@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeCinemaComponent } from './home-cinema.component';
-import { NewsComponent } from './news/news.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DetailFilmComponent } from './home-page/list-film/detail-film/detail-film.component';
+import { RegisterComponent } from './header/register/register.component';
+import { AuthenGuard } from '../_core/guard/authen.guard';
 
 
 
@@ -15,15 +16,15 @@ const routes: Routes = [
         path: '', component: HomePageComponent
       },
       {
-        path: 'news', component: NewsComponent
+        path: 'register', component: RegisterComponent
       },
       {
         path: 'detail/:id', component: DetailFilmComponent
       },
       {
-        path: 'showtimes',loadChildren:'./showtime/show-time.module#ShowTimeModule'   
+        path: 'showtimes', loadChildren: './showtime/show-time.module#ShowTimeModule',canActivate:[AuthenGuard]
       },
-      { path: '**', redirectTo: 'home',pathMatch:'full' }
+      { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]
   },
 

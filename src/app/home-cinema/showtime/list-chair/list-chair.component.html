@@ -1,18 +1,18 @@
 <div class="myListChair">
   <div class="mylistchair-content row">
-    <div class="col-lg-3">
+    <div class="col-lg-4 col-md-6">
       <div class="listinfo">
-        <img class="film-img" [src]="hinhAnh" alt="failed">
+        <img class="film-img" [src]="filmPicture" alt="failed">
         <div class="rate">
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star-half"></i>
-          <span>rank</span>
+          <p>IMDb: {{filmRate}}</p>
         </div>
         <div class="film-name">
-          <p>{{tenPhim}}</p>
+          <p>{{filmName}}</p>
         </div>
         <div class="film-info">
           <div class="film-info-item">
@@ -27,18 +27,47 @@
         </div>
         <div class="film-content">
           <p>
-            {{moTa}}
+            {{filmContent}}
           </p>
         </div>
       </div>
     </div>
-    <div class="col-lg-8">
-      <div class=" listChair">
-        <ng-container *ngFor="let item of danhSachGhe.DanhSachGhe; let stt = index">
-          <app-chair [chair]="item"></app-chair>
+    <div class="listchair col-lg-8 col-md-6">
+        
+      <div class="listchair-item">
+          <h4 class="screen">SCREEN</h4>
+        <ng-container *ngFor="let item of listChair.DanhSachGhe; let stt = index">
+          <app-chair [chair]="item" (EventChooseChair) = "EventChooseChairParent($event,item.MaGhe)"></app-chair>
         </ng-container>
+        <div class="listchair-status">
+          <div class="status-item status-item">
+            <i class="fa fa-square icon-1"></i> <span>Seat Available</span>
+          </div>
+          <div class="status-item">
+            <i class="fa fa-square icon-2"></i> <span>Reserved Seat</span>
+          </div>
+          <div class="status-item">
+            <i class="fa fa-square icon-3"></i> <span>Reserved Seat</span>
+          </div>
+        </div>
+        <div class="listchair-price">
+          <div style="width:20%" class="price-user">
+            <p>Name</p>
+            <p></p>
+          </div>
+          <div style="width:40%" class="price-ticket">
+            <p>Tickets</p>
+           <span *ngFor = "let item of listChairBooking">
+              {{item.TenGhe}},
+            </span>
+          </div>
+          <div  style="width:20%" class="price-sum">
+            <p>Price</p>
+            <span >{{sum}}</span>
+          </div>
+          <button style="width:20%">Check Out</button>
+        </div>
       </div>
     </div>
-
   </div>
 </div>

@@ -32,7 +32,7 @@
               <td>{{item.Rap.TenRap}}</td>
               <td>{{item.NgayChieuGioChieu | date: "MM-dd-yyy"}}</td>
               <td>{{item.NgayChieuGioChieu | date: "hh-mm-ss"}}</td>
-              <td><a class="btn btn-success" [routerLink]="['/home/showtimes/',item.MaLichChieu]" [queryParams] ="{tenPhim:detailMovie.TenPhim,hinhAnh:detailMovie.HinhAnh,moTa:detailMovie.MoTa}" (click)="datVe(item.MaLichChieu)">Đặt vé</a></td>
+              <td><a class="btn btn-success" [routerLink]="['/home/showtimes/',item.MaLichChieu]" [queryParams] ="{filmRate:detailMovie.DanhGia,filmName:detailMovie.TenPhim,filmPicture:detailMovie.HinhAnh,filmContent:detailMovie.MoTa}" (click)="datVe(item.MaLichChieu)">Đặt vé</a></td>
             </tr>
           </tbody>
         </table>

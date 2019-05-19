@@ -4,7 +4,7 @@ import { HomeCinemaComponent } from './home-cinema.component';
 import { HomeCinemaRoutingModule } from './home-cinema-routing.module';
 
 import { TheaterComponent } from './theater/theater.component';
-import { NewsComponent } from './news/news.component';
+
 import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -18,10 +18,12 @@ import { CarouselFilmComponent } from './home-page/carousel-film/carousel-film.c
 import { ListFilmComponent } from './home-page/list-film/list-film.component';
 import { FilmComponent } from './home-page/list-film/film/film.component';
 import { DetailFilmComponent } from './home-page/list-film/detail-film/detail-film.component';
-
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './header/register/register.component';
+import { NewsComponent } from './home-page/news/news.component'
 
 @NgModule({
-  declarations: [HomeCinemaComponent, TheaterComponent, NewsComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, CarouselFilmComponent, ListFilmComponent, FilmComponent, DetailFilmComponent],
+  declarations: [HomeCinemaComponent, TheaterComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, CarouselFilmComponent, ListFilmComponent, FilmComponent, DetailFilmComponent, RegisterComponent, NewsComponent],
   imports: [
     CommonModule,
     HomeCinemaRoutingModule,
@@ -33,9 +35,10 @@ import { DetailFilmComponent } from './home-page/list-film/detail-film/detail-fi
     MatIconModule,
     MatListModule,
     OwlModule,
+    FormsModule,
   ],
   exports: [
-    HomeCinemaComponent, NewsComponent, DetailFilmComponent
+    HomeCinemaComponent, DetailFilmComponent ,RegisterComponent
   ]
 })
 export class HomeCinemaModule { }
