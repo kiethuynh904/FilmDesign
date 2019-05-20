@@ -26,17 +26,25 @@
       }
 
       .main-item-2 {
-        .news-uptime {}
+        .main-news-uptime {}
 
-        .news-title {}
+        .main-news-title {
+          color: #2E8B57;
+        }
 
-        .new-content {}
+        .main-new-content {}
       }
     }
 
     .sub-news {
       height: 250 px;
       display: flex;
+      img{
+        width: 100%;
+      }
+      .sub-news-title{
+        color: #2E8B57;
+      }
     }
   }
 }
