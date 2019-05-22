@@ -44,7 +44,7 @@ export class AdminListFilmComponent implements OnInit {
         this.data.uploadFile(formData).subscribe((result) => {
           if(result === true)
           {
-            this.getListFilm();
+            alert('update thanh cong')
           }
         })
       }
@@ -54,7 +54,6 @@ export class AdminListFilmComponent implements OnInit {
     console.log(id)
     const uri = `QuanLyPhim/XoaPhim?MaPhim=${id}`
     this.data.Delete(uri).subscribe((result:any) =>{
-      this.getListFilm();
     })
   }
 }

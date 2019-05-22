@@ -1,5 +1,5 @@
 .myListChair {
-
+  padding-top: 100px;
   background: linear-gradient(to right, #0E1428, #0B1123, #0A0F20);
 
   .mylistchair-content {
@@ -10,7 +10,7 @@
     .listinfo {
       height: 100%;
       padding: 0px 30px;
-      
+
       background: rgba(58, 64, 71, .2);
 
       .film-name {
@@ -73,7 +73,7 @@
         box-shadow: inset 0 7px 11px -7px #00FFFF; // shadow huong vao trong (only TOP)
 
         .screen {
-          
+
           position: absolute;
           top: 20px;
           left: 50%;
@@ -116,6 +116,25 @@
           transform: translateY(100%);
           display: flex;
           justify-content: space-around;
+          background: rgba(58, 64, 71, .3);
+          padding: 10px 0;
+
+          .price-title {
+            font-weight: 500;
+            color: #a9a9a9;
+          }
+
+          .price-content {
+            font-weight: 500;
+          }
+
+          .btn-checkout {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #32CD32;
+            font-weight: 500;
+          }
         }
       }
     }

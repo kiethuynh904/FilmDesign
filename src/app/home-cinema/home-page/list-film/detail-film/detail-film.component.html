@@ -1,41 +1,52 @@
 <ng-container *ngIf="detailMovie">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <img [src]="detailMovie.HinhAnh" alt="">
+  <div class="mydetail">
+    <div class="detail-content">
+      <div class="detail-item-1">
+        <div class="row">
+          <div class="col-sm-6">
+            <img [src]="detailMovie.HinhAnh" alt="">
+          </div>
+          <div class="col-sm-6">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th >Tên phim</th>
+                  <td class="film-name">{{detailMovie.TenPhim}}</td>
+                </tr>
+                <tr>
+                  <th>Mô tả</th>
+                  <td class="film-content">{{detailMovie.MoTa}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6">
-        <table class="table">
-          <tbody>
-            <tr>
-              <td>Tên phim</td>
-              <td>{{detailMovie.TenPhim}}</td>
-            </tr>
-            <tr>
-              <td>Mô tả</td>
-              <td>{{detailMovie.MoTa}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <table class="table">
-          <tbody>
-            <tr>
-              <td>Rạp</td>
-              <td>Ngày</td>
-              <td>Giờ</td>
-            </tr>
-            <tr *ngFor="let item of detailMovie.LichChieu">
-              <td>{{item.Rap.TenRap}}</td>
-              <td>{{item.NgayChieuGioChieu | date: "MM-dd-yyy"}}</td>
-              <td>{{item.NgayChieuGioChieu | date: "hh-mm-ss"}}</td>
-              <td><a class="btn btn-success" [routerLink]="['/home/showtimes/',item.MaLichChieu]" [queryParams] ="{filmRate:detailMovie.DanhGia,filmName:detailMovie.TenPhim,filmPicture:detailMovie.HinhAnh,filmContent:detailMovie.MoTa}" (click)="datVe(item.MaLichChieu)">Đặt vé</a></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="detail-item-2">
+        <div class="row">
+          <div class="col-sm-12">
+            <table class="table">
+              <thead>
+                <tr>
+                    <th class="">Theater</th>
+                    <th class="">Day</th>
+                    <th class="">Showtime</th>
+                    <th class="">Buy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of detailMovie.LichChieu">
+                  <td>{{item.Rap.TenRap}}</td>
+                  <td>{{item.NgayChieuGioChieu | date: "MM-dd-yyy"}}</td>
+                  <td>{{item.NgayChieuGioChieu | date: "hh-mm-ss"}}</td>
+                  <td><a class="btn-book" [routerLink]="['/home/showtimes/',item.MaLichChieu]"
+                      [queryParams]="{filmRate:detailMovie.DanhGia,filmName:detailMovie.TenPhim,filmPicture:detailMovie.HinhAnh,filmContent:detailMovie.MoTa}"
+                      (click)="datVe(item.MaLichChieu)">Buy</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>

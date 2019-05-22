@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './../../../_core/service/data.service'
 import { ActivatedRoute, ParamMap } from '@angular/router'
 import { summaryFileName } from '@angular/compiler/src/aot/util';
+declare var swal: any;
 @Component({
   selector: 'app-list-chair',
   templateUrl: './list-chair.component.html',
@@ -16,16 +17,17 @@ export class ListChairComponent implements OnInit {
   filmContent: any;
   filmRate: any;
   sum: number = 0;
+  maGhe: any
+  userName: any = JSON.parse(localStorage.getItem("user")).TaiKhoan
+
   constructor(private data: DataService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.getParams();
     this.getListChair();
-    console.log(this.sum);
   }
   getParams = () => {
     this.maLichChieu = this.activatedRoute.snapshot.paramMap.get("MaLichChieu");
-    console.log(this.maLichChieu);
     this.activatedRoute.queryParams.subscribe((params) => {
       this.filmName = params.filmName;
       this.filmPicture = params.filmPicture;
@@ -40,14 +42,34 @@ export class ListChairComponent implements OnInit {
       console.log(this.listChair.DanhSachGhe)
     })
   }
-  EventChooseChairParent(chairBooking: boolean, maGhe) {
+  CheckOut = () => {
+    let mess = confirm('Are you sure want to buy this ticket?')
+    if (mess == true) {
+      const uri = `QuanLyDatVe/DatVe`
+      let objVe = {
+        MaLichChieu: this.maLichChieu,
+        TaiKhoanNguoiDung: this.userName,
+        DanhSachVe: this.listChairBooking
+      }
+      this.data.Post(uri, objVe).subscribe((result) => {
+        swal("SUCCESS",result,"success");
+      })
+      console.log(objVe);
+    }
+  }
+
+  EventChooseChairParent(chairBooking: boolean, value) {
+    let ve: { MaGhe: string, GiaVe: number } = {
+      MaGhe: value.MaGhe,
+      GiaVe: 75000
+    }
     for (let item of this.listChair.DanhSachGhe) {
-      if (chairBooking == true && maGhe == item.MaGhe) {
-        this.listChairBooking.push(item);
+      if (chairBooking == true && value.MaGhe == item.MaGhe) {
+        this.listChairBooking.push(ve);
         console.log(this.listChairBooking);
       }
-      else if (chairBooking == false && maGhe == item.MaGhe) {
-        this.DeleteChair(maGhe)
+      else if (chairBooking == false && value.MaGhe == item.MaGhe) {
+        this.DeleteChair(value.MaGhe)
       }
     }
     this.SumPrice();
@@ -60,7 +82,7 @@ export class ListChairComponent implements OnInit {
     })
   }
   SumPrice() {
-    this.sum = this.listChairBooking.reduce((sum:number, item) => sum += item.GiaVe, 0)
+    this.sum = this.listChairBooking.reduce((sum: number, item) => sum += item.GiaVe, 0)
     console.log(this.sum)
   }
 }

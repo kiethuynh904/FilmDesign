@@ -2,20 +2,22 @@
   background: linear-gradient(to right, #0D1327, #101830, #0C1226);
   color: #FAF0E6;
   height: 800px;
-
+  padding-top: 100px;
   .myform {
     .btn-register {
-        border: 1px solid #e85d6b;
-        border-radius: 20px;
-        background: transparent;
-        outline: none;
-        padding: 10px 20px;
-        color: #FAF0E6;
-        transition: .5s all;
-        &:hover{
-            background: #e85d6b;
-        }
+      border: 1px solid #e85d6b;
+      border-radius: 20px;
+      background: transparent;
+      outline: none;
+      padding: 10px 20px;
+      color: #FAF0E6;
+      transition: .5s all;
+
+      &:hover {
+        background: #e85d6b;
+      }
     }
+
     .myform-item {
       position: relative;
       width: 100%;
@@ -23,7 +25,7 @@
       border: none;
       border-bottom: 1px solid #696969;
 
-      
+
 
       input {
         background: transparent;
@@ -46,6 +48,7 @@
       &:focus-within:after {
         width: 100%;
       }
+
       &:focus-within {
         border-bottom: 1px solid transparent;
       }

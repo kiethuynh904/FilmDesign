@@ -1,0 +1,59 @@
+.mydetail {
+  background: linear-gradient(to right, #0E1428, #0B1123, #0A0F20);
+  color: #FAF0E6;
+  padding-top: 100px;
+
+  .detail-content {
+    color: #FAF0E6;
+    width: 80%;
+    margin: 0 auto;
+
+    .detail-item-1 {
+      .table {
+        th {
+          color: #FAF0E6;
+        }
+
+        color: #A9A9A9;
+
+        .film-name {
+          color: #e85d6b;
+          font-weight: 600;
+          font-size: 20px;
+        }
+
+        .film-content {
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    .detail-item-2 {
+      .table {
+        color: #A9A9A9;
+
+        th {
+          color: #FAF0E6;
+          font-size: 24px;
+          font-weight: 400;
+        }
+
+        .btn-book {
+          color: #000;
+          border: 1px solid #00FA9A;
+          background: #00FA9A;
+          padding: 7px 20px;
+          border-radius: 15px;
+          text-decoration: none;
+          font-weight: 500;
+          &:hover{
+            color: #FAF0E6;
+            background: transparent;
+            transition: .3s all;
+            border: 1px solid #00FA9A;
+          }
+        }
+      }
+    }
+  }
+}

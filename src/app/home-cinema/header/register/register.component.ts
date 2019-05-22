@@ -3,7 +3,7 @@ import { User } from 'src/app/_core/model/User';
 import { DataService } from 'src/app/_core/service/data.service';
 import { Router } from '@angular/router';
 
-
+declare var swal: any;
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -28,11 +28,11 @@ export class RegisterComponent implements OnInit {
     const uri = `QuanLyNguoiDung/ThemNguoiDung`
     this.data.Post(uri, objNguoiDung).subscribe(result => {
       if (typeof result == "object") {
-        alert('Sign Up Success')
+        swal("SUCESS",'Sign Up Success',"success")
         this.router.navigate(["/home"]);
       }
       else{
-        alert (result)
+        swal ("FAILED",result,"error")
       }
     })
   }
