@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
+//MATERIAL
 import { DemoMaterialModule } from '../share-module/material-test/material-test.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
@@ -20,10 +21,15 @@ import { FilmComponent } from './home-page/list-film/film/film.component';
 import { DetailFilmComponent } from './home-page/list-film/detail-film/detail-film.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './header/register/register.component';
-import { NewsComponent } from './home-page/news/news.component'
+import { NewsComponent } from './home-page/news/news.component';
+//PRIMENG
+import {PrimeNGModule} from './../share-module/primeNG/prime-ng.module';
+import { SafePipe } from '../safe.pipe';
+
+//safe Pipe
 
 @NgModule({
-  declarations: [HomeCinemaComponent, TheaterComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, CarouselFilmComponent, ListFilmComponent, FilmComponent, DetailFilmComponent, RegisterComponent, NewsComponent],
+  declarations: [HomeCinemaComponent, SafePipe,TheaterComponent, ContactComponent, HeaderComponent, FooterComponent, HomePageComponent, CarouselFilmComponent, ListFilmComponent, FilmComponent, DetailFilmComponent, RegisterComponent, NewsComponent],
   imports: [
     CommonModule,
     HomeCinemaRoutingModule,
@@ -36,6 +42,8 @@ import { NewsComponent } from './home-page/news/news.component'
     MatListModule,
     OwlModule,
     FormsModule,
+    PrimeNGModule,
+  
   ],
   exports: [
     HomeCinemaComponent, DetailFilmComponent ,RegisterComponent

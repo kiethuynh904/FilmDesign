@@ -1,27 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import mixitup from 'mixitup';
 import { DataService } from 'src/app/_core/service/data.service';
-import {Phim} from '../../../_core/model/Phim';
+import { Phim } from '../../../_core/model/Phim';
+
+
 @Component({
     selector: 'app-list-film',
     templateUrl: './list-film.component.html',
     styleUrls: ['./list-film.component.scss']
 })
 export class ListFilmComponent implements OnInit {
-    listFilmNow:Array<Phim> = []
+    listFilmNow: Array<Phim> = []
+    // embedyoutube:string = "https://www.youtube.com/embed/6wD4V0rvlDI"
+
     ListFilmCommingSoon = [
-        {   DanhGia: 7,
+        {
+            DanhGia: 7,
             HinhAnh: "http://svcy2.myclass.vn/hinhanh/phim/john-wick-3-parabellum.jpg",
             MaNhom: "GP05",
             MaPhim: 137,
             MoTa: "Hành Động",
             NgayKhoiChieu: "2019-05-17T00:00:00",
             TenPhim: "John Wick 3: Parabellum",
-            Trailer: "https://www.youtube.com/watch?v=pU8-7BX9uxs&t"},
+            Trailer: "https://www.youtube.com/watch?v=pU8-7BX9uxs&t"
+        },
     ]
     constructor(private data: DataService) { }
 
     ngOnInit() {
+        
         //GET LIST FILM 
         this.getListFilm();
         //END GET LIST FILM
@@ -43,11 +50,19 @@ export class ListFilmComponent implements OnInit {
             });
         //END MIXITUP SCRIPT  
     }
+
     getListFilm() {
         const uri = "QuanLyPhim/LayDanhSachPhim?MaNhom=GP09";
         this.data.Get(uri).subscribe((result: any) => {
-            this.listFilmNow = result;
-            
+            this.listFilmNow = result; 
+            this.CatChuoiTrailer(this.listFilmNow)
         })
+    }
+    CatChuoiTrailer(danhSachPhim) {
+        for (let item of danhSachPhim) {
+            console.log(item.Trailer);
+            console.log(item.Trailer.search("watch"))
+            item.Trailer = "https://www.youtube.com/embed/" + item.Trailer.slice(32);
+        }
     }
 }

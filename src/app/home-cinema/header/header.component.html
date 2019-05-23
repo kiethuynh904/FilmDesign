@@ -14,7 +14,7 @@
         <i class="fa fa-user-circle"></i>
       </div>
       <div class="login">
-        <a class="login-text" [(ngModel)]="userValid" *ngIf="userValid;else elseContent" data-toggle="modal" data-target="#myModal">Login</a>
+        <a class="login-text"  *ngIf="userValid;else elseContent" data-toggle="modal" data-target="#myModal">Login</a>
         <ng-template #elseContent>
           <a style="outline: none;color: #FAF0E6;" mat-button [matMenuTriggerFor]="afterMenu">{{userName}}</a>
           <mat-menu #afterMenu="matMenu">    

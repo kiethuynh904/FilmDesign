@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataService } from 'src/app/_core/service/data.service';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();
-  constructor(private data: DataService, private router: Router, ) { }
+  constructor(private data: DataService, private router: Router, private route: ActivatedRoute ) { }
   userValid: boolean = true;
   userName: any;
+  returnUrl:string;
   ngOnInit() {
-   
+
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
   ngDoCheck(){
     this.CheckUser();
@@ -26,12 +28,11 @@ export class HeaderComponent implements OnInit {
     this.data.Post(uri).subscribe((result) => {
       if (result === "Tài khoản hoặc mật khẩu không đúng !") {
         alert(result);
-
       } else {
         localStorage.setItem("user", JSON.stringify(result));
         alert("Login thành công");
 
-        this.router.navigate(["/home"]);
+        this.router.navigateByUrl(this.returnUrl);
       }
     })
   }

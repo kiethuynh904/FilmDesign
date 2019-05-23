@@ -11,13 +11,13 @@ export class AuthenGuard implements CanActivate {
   }
   
   
-  canActivate() {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (localStorage.getItem("user")) {
       return true;
     }
     else {
       swal("","please login your account!","error");
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home'],{ queryParams: { returnUrl: state.url }});
       return false;
     }
   }

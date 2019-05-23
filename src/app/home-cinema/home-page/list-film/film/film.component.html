@@ -4,13 +4,25 @@
     <span class="rate">{{movie.DanhGia}}
       <ng-container *ngIf="movie.DanhGia != 10">.0</ng-container>
     </span>
-
-    <a class="icon-play" [href]="movie.Trailer" target="_blank">
+    <!-- <a class="icon-play" [href]="movie.Trailer" target="_blank">
       <div>
         <i class="fa fa-play"></i>
         <p style="margin:0">Watch Trailer</p>
       </div>
-    </a>
+    </a> -->
+    <p-lightbox type="content">
+      <a class="group icon-play" href="#">
+        <div>
+          <i class="fa fa-play"></i>
+          <p style="margin:0">Watch Trailer</p>
+        </div>
+      </a>
+      <div class="myiframe">
+        <iframe [src]="movie.Trailer | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+    </p-lightbox>
+
   </div>
   <div class="film-info">
     <p>100 minute</p>
@@ -18,7 +30,8 @@
   <div class="film-name">
     <p> {{movie.TenPhim}}</p>
   </div>
-  
-    <a [routerLink]="['/home/detail/',movie.MaPhim]" [queryParams]="{tenPhim: movie.TenPhim,trailer:movie.Trailer}" class="buy-ticket">Buy Ticket</a>
-  
+
+  <a [routerLink]="['/home/detail/',movie.MaPhim]" [queryParams]="{tenPhim: movie.TenPhim,trailer:movie.Trailer}"
+    class="buy-ticket">Buy Ticket</a>
+
 </section>

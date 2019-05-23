@@ -1,4 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input, Pipe } from '@angular/core';
+import { DataService } from 'src/app/_core/service/data.service';
+
 
 @Component({
   selector: 'app-film',
@@ -7,10 +9,17 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class FilmComponent implements OnInit {
   @Input() movie;
-  constructor() { }
 
-  ngOnInit() {
+
+  constructor(private data: DataService) {
     
-  }
+   }
 
+  ngOnInit() { 
+     
+     
+  }
+  closeTrailer(){
+    window.close();
+  }
 }
