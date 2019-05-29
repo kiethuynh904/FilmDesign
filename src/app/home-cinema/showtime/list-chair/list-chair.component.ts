@@ -52,7 +52,7 @@ export class ListChairComponent implements OnInit {
         DanhSachVe: this.listChairBooking
       }
       this.data.Post(uri, objVe).subscribe((result) => {
-        swal("SUCCESS",result,"success");
+        swal("SUCCESS", result, "success");
       })
       console.log(objVe);
     }

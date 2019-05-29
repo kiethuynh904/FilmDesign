@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   userName: any;
   returnUrl:string;
   ngOnInit() {
-
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
   ngDoCheck(){

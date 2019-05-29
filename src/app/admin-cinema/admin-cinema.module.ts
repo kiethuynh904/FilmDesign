@@ -5,10 +5,9 @@ import { AdminCinemaRoutingModule } from './admin-cinema-routing.module';
 import { AdminCinemaComponent } from './admin-cinema/admin-cinema.component';
 import { AdminPageComponent } from './admin-cinema/admin-page/admin-page.component';
 import { AdminListFilmComponent } from './admin-cinema/admin-page/admin-list-film/admin-list-film.component';
-import { AdminFilmComponent } from './admin-cinema/admin-page/admin-list-film/admin-film/admin-film.component';
 import { FormsModule} from '@angular/forms';
 @NgModule({
-  declarations: [AdminCinemaComponent, AdminPageComponent, AdminListFilmComponent, AdminFilmComponent],
+  declarations: [AdminCinemaComponent, AdminPageComponent, AdminListFilmComponent],
   imports: [
     CommonModule,
     AdminCinemaRoutingModule,FormsModule

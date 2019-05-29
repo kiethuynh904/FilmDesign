@@ -6,18 +6,18 @@
           <h1 class="display-4 text-left">Student List</h1>
         </div>
         <div class="col-md-6 text-right">
-          <button id="themSV" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          <button id="themSV" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalThemPhim">
             Them Phim
           </button>
         </div>
         <!-- The Modal -->
-        <div class="modal fade" id="myModal">
+        <div class="modal fade" id="myModalThemPhim">
           <div class="modal-dialog">
             <div class="modal-content">
 
               <!-- Modal Header -->
               <div class="modal-header">
-                <h4 class="modal-title" id="modal-header">Modal Heading</h4>
+                <h4 class="modal-title" id="modal-header">Them Phim</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
               <!-- Modal body -->
@@ -42,30 +42,25 @@
                   <div class="form-group">
                     <label for="email">HinhAnh:</label>
                     <input type="file" class="form-control" #imgPhim ngModel name="HinhAnh" placeholder="Enter your email...">
-
                   </div>
                   <div class="form-group">
                     <label for="phone">MoTa:</label>
                     <input type="text" class="form-control" ngModel name="MoTa" placeholder="Enter your phone...">
-
                   </div>
                   <div class="form-group">
                     <label for="scoremath">MaNhom:</label>
                     <input type="text" class="form-control" ngModel name="MaNhom"
                       placeholder="Enter your math scores...">
-
                   </div>
                   <div class="form-group">
                     <label for="scorephysical">NgayKhoiChieu:</label>
                     <input type="text" class="form-control" ngModel name="NgayKhoiChieu"
                       placeholder="Enter your physical scores...">
-
                   </div>
                   <div class="form-group">
                     <label for="scorechemical">DanhGia:</label>
                     <input type="text" class="form-control" ngModel name="DanhGia"
                       placeholder="Enter your chemical scores...">
-
                   </div>
                   <button type="submit" class="btn btn-primary">Save</button>
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -74,13 +69,14 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
     <div class="card-body">
       <div class="search mb-3">
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" id="searchName">
-          <span class="input-group-text" id="btnTimSV"><i class="fa fa-search"></i></span>
+          <span class="input-group-text" ><i class="fa fa-search"></i></span>
         </form>
       </div>
       <div class="row">
@@ -109,8 +105,8 @@
               <td>{{item.NgayKhoiChieu}}</td>
               <td>{{item.DanhGia}}</td>
               <td>
-                <button (click)="getInfoUpdate(item.MaPhim)" class="btn btn-primary">Cap Nhat</button>
-                <button (click) = "XoaPhim(item.MaPhim)" class="btn btn-danger">Xoa</button>
+                <button (click)="LayThongTinUpdate(item)" class="btn btn-primary" data-toggle="modal" data-target="#myModalCapNhat">Cap Nhat</button>
+                <button (click) ="XoaPhim(item.MaPhim)" class="btn btn-danger">Xoa</button>
               </td>
             </tr>
           </tbody>
@@ -118,5 +114,59 @@
       </div>
     </div>
   </div>
-
 </section>
+<!-- The modal update -->
+<div class="modal fade" id="myModalCapNhat">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-header">Cap Nhat</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+     
+      <div class="modal-body">
+        <form #formCapNhat="ngForm" (ngSubmit)="CapNhatPhim(formCapNhat.value,imgPhim.files)">
+          <div class="form-group">
+            <label for="mssv">Ma Phim:</label>
+            <input disabled type="text" class="form-control"  ngModel name="MaPhim" placeholder="Enter your student code...">
+          </div>
+          <div class="form-group">
+            <label for="name">TenPhim:</label>
+            <input type="text" class="form-control" ngModel name="TenPhim" placeholder="Enter your name...">
+
+          </div>
+          <div class="form-group">
+            <label for="age">Trailer:</label>
+            <input type="text" class="form-control" ngModel name="Trailer" placeholder="Enter your age...">
+
+          </div>
+          <div class="form-group">
+            <label for="email">HinhAnh:</label>
+            <input type="file" class="form-control" #imgPhim ngModel name="HinhAnh" placeholder="Enter your email...">
+          </div>
+          <div class="form-group">
+            <label for="phone">MoTa:</label>
+            <input type="text" class="form-control" ngModel name="MoTa" placeholder="Enter your phone...">
+          </div>
+          <div class="form-group">
+            <label for="scoremath">MaNhom:</label>
+            <input type="text" class="form-control" ngModel name="MaNhom"
+              placeholder="Enter your math scores...">
+          </div>
+          <div class="form-group">
+            <label for="scorephysical">NgayKhoiChieu:</label>
+            <input type="text" class="form-control" ngModel name="NgayKhoiChieu"
+              placeholder="Enter your physical scores...">
+          </div>
+          <div class="form-group">
+            <label for="scorechemical">DanhGia:</label>
+            <input type="text" class="form-control" ngModel name="DanhGia"
+              placeholder="Enter your chemical scores...">
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

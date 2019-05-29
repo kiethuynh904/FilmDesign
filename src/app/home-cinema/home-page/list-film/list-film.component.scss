@@ -35,7 +35,6 @@
           display: block;
           background: #e85d6b;
         }
-
         &:hover:after {
           width: 100%;
           transition: .4s all;
@@ -73,7 +72,6 @@
         grid-gap: 10px;
         grid-auto-rows: minmax(100px, auto);
       }
-
     }
   }
 }

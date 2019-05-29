@@ -7,12 +7,15 @@
   text-align: center;
   background: linear-gradient(to right, #0D1327, #101830, #0C1226);
   color: #FAF0E6;
+
   .myform {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
     .modal-user {
       width: 300px;
+
       input[type="text"],
       input[type="password"] {
         color: #FAF0E6;
@@ -26,11 +29,13 @@
         border: 1px solid #e85d6b;
         outline: none;
         transition: .25s all;
+
         &:focus {
           width: 280px;
         }
       }
     }
+
     .btn-login {
       color: #FAF0E6;
       border: 1px solid #7FFF00;
@@ -58,7 +63,7 @@ header {
   width: 100%;
   // background: linear-gradient(to right, #0D1327, #101830, #0C1226);
 
-  background: rgba(14, 21, 43,.9);
+  background: rgba(14, 21, 43, .9);
 
   padding: 2px 0;
   color: #FAF0E6;
@@ -127,7 +132,7 @@ header {
         text-decoration: none;
         color: #FAF0E6;
         position: relative;
-
+        cursor: pointer;
 
 
         &:before {
@@ -207,6 +212,7 @@ header {
       }
     }
   }
+
   .mymodal {
     .myform {
       .register {

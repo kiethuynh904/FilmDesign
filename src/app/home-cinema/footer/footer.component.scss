@@ -1,5 +1,6 @@
 .myfooter {
   padding: 30px;
+  background: -webkit-gradient(linear, left top, right top, from(#0D1327), color-stop(#101830), to(#0C1226));
   background: linear-gradient(to right, #0D1327, #101830, #0C1226);
   color: #FAF0E6;
 
@@ -39,6 +40,7 @@
 
           a {
             text-decoration: none;
+            -webkit-transition: .5s all;
             transition: .5s all;
             cursor: pointer;
 
@@ -66,6 +68,7 @@
 
         &:hover {
           color: #2E8B57;
+          -webkit-transition: .3s all;
           transition: .3s all;
         }
       }
@@ -85,6 +88,7 @@
         padding: 5px;
 
         &:hover {
+          -webkit-transition: .3s all;
           transition: .3s all;
           color: #2E8B57;
         }
