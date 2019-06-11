@@ -16,13 +16,15 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
   RegisterUser = (value) => {
+    console.log(value);
+    
     let objNguoiDung = {
       TaiKhoan: value.Username,
       MatKhau: value.Password,
       Email: value.Email,
       SoDT: value.Phonenumber,
       MaNhom: "GP07",
-      MaLoaiNguoiDung: "KhachHang"
+      MaLoaiNguoiDung:value.Position, 
     };
     console.log(objNguoiDung)
     const uri = `QuanLyNguoiDung/ThemNguoiDung`

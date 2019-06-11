@@ -46,12 +46,32 @@
           border-radius: 15px;
           text-decoration: none;
           font-weight: 500;
-          &:hover{
+
+          &:hover {
             color: #FAF0E6;
             background: transparent;
             transition: .3s all;
             border: 1px solid #00FA9A;
           }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:532px) {
+  .mydetail {
+    
+
+    .detail-item-2 {
+      .table {
+        color: #A9A9A9;
+
+        th {
+          padding: .75rem 5px .75rem 8px;
+        }
+
+        td {
+          padding: .75rem 0;
         }
       }
     }

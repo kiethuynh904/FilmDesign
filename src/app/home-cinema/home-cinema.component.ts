@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-home-cinema',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-cinema.component.scss']
 })
 export class HomeCinemaComponent implements OnInit {
-
+//   @ViewChild('footer') myfooter:ElementRef
+//   scroll(el: HTMLElement) {
+//     this.myfooter.nativeElement.scrollIntoView({behavior:"smooth"});
+// }
   constructor() { }
-
+  
   ngOnInit() {
   }
 

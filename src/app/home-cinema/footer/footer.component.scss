@@ -3,7 +3,7 @@
   background: -webkit-gradient(linear, left top, right top, from(#0D1327), color-stop(#101830), to(#0C1226));
   background: linear-gradient(to right, #0D1327, #101830, #0C1226);
   color: #FAF0E6;
-
+  width: 100%;
   .author {
     text-transform: uppercase;
     font-weight: 600;
@@ -104,12 +104,14 @@
     .footer-content {
       h3 {
         text-align: left;
-        color :#FAF0E6;
+        color: #FAF0E6;
       }
+
       .footer-app {
-        text-align: left;  
-        color: #A9A9A9; 
+        text-align: left;
+        color: #A9A9A9;
       }
+
       .footer-social {
         display: none;
         color: #A9A9A9;

@@ -59,14 +59,24 @@ export class AdminListFilmComponent implements OnInit {
       DanhGia: item.DanhGia
     })
   }
-  CapNhatPhim(f: NgForm) {
-    console.log(f);
-    // for (let film of this.listFilmNow) {
-    //   if (maPhim == film.MaPhim) {
-
-    //   }
-    //   console.log(this.phim);
-    // }
+  CapNhatPhim(phim: Phim, fileImg: any) {
+    console.log(phim);
+    const uri = `QuanLyPhim/CapNhatPhim`
+    this.data.Post(uri, phim).subscribe((result: any) => {
+      console.log(result);
+      
+      if (typeof result === 'object') {
+        console.log(typeof result)
+        //Thêm hình ảnh
+        var formData = new FormData();
+        formData.append("Files", fileImg[0])
+        formData.append("TenPhim", phim.TenPhim);
+        this.data.uploadFile(formData).subscribe((result) => {
+          if (result === true) {
+          }
+        })
+      }
+    })
   }
   XoaPhim(id) {
     console.log(id)

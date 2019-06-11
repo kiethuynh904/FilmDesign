@@ -3,6 +3,7 @@
   color: #FAF0E6;
   height: 800px;
   padding-top: 100px;
+
   .myform {
     .btn-register {
       border: 1px solid #e85d6b;
@@ -12,9 +13,19 @@
       padding: 10px 20px;
       color: #FAF0E6;
       transition: .5s all;
+      display: block;
+      margin-top: 15px;
 
       &:hover {
         background: #e85d6b;
+      }
+    }
+
+    .myform-option {
+      background: transparent;
+      color: #FAF0E6;
+      option{
+        color: #e85d6b;
       }
     }
 
@@ -24,8 +35,6 @@
       padding: 5px 10px;
       border: none;
       border-bottom: 1px solid #696969;
-
-
 
       input {
         background: transparent;

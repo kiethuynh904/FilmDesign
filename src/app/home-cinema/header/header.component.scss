@@ -226,7 +226,7 @@ header {
 }
 
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 996px) {
   .navbar-expand-custom {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -309,6 +309,28 @@ header {
         justify-content: flex-end;
         position: absolute;
         right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .header {
+
+    // position: fixed;
+    // z-index: 100;
+    .mynav {
+      .user {
+        display: block;
+
+        .user-icon {
+          margin-right: 0;
+          margin-top: 15px;
+        }
+
+        .login {
+          padding-top: 5px;
+        }
       }
     }
   }

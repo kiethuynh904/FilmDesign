@@ -5,27 +5,36 @@
       <div class="form-group">
         <label>Username :</label>
         <div class="myform-item">
-            <input   type="text" class="myform-item" #username name="Username" ngModel>
+          <input type="text" class="myform-item" #username name="Username" ngModel>
         </div>
       </div>
-    
+
       <div class="form-group">
         <label>Password:</label>
         <div class="myform-item">
-            <input type="text" class="myform-item" #password name="Password" ngModel>
+          <input type="text" class="myform-item" #password name="Password" ngModel>
         </div>
       </div>
-    
+
       <div class="form-group">
         <label>Email:</label>
-        <div class="myform-item"><input  type="email" class="myform-item" #email name="Email" ngModel></div>
+        <div class="myform-item"><input type="email" class="myform-item" #email name="Email" ngModel></div>
       </div>
-    
+
       <div class="form-group">
         <label>Phone :</label>
         <div class="myform-item">
-            <input  type="text" class="myform-item" #phonenumber name="Phonenumber" ngModel>
+          <input type="text" class="myform-item" #phonenumber name="Phonenumber" ngModel>
         </div>
+      </div>
+
+      
+      <div class="form-group">
+        <label for="position" style="display:block">Option :</label>
+        <select class="form-control myform-option" id="position" #positon name="Position" ngModel>
+          <option value="KhachHang">Khách Hàng</option>
+          <option value="QuanTri">Quản Trị</option>
+        </select>
       </div>
       <button class="btn-register">Sign Up</button>
     </form>

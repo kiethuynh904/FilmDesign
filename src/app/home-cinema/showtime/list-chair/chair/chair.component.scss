@@ -6,11 +6,23 @@
   background: #708090;
   border-radius: 50%;
   line-height: 30px;
+  text-align: center;
 }
-.booked{
-    background: #DC143C;
-    cursor:no-drop;
+
+.booked {
+  background: #DC143C;
+  cursor: no-drop;
 }
-.chairBooking{
-    background: #7FFF00;
+
+.chairBooking {
+  background: #7FFF00;
+}
+
+@media screen and (max-width:992px) {
+  .chair {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+  }
 }
